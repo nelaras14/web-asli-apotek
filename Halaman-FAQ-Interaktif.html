@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Apotek Difa Farma</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#111827", secondary: "#E4F5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .faq-toggle-icon {
+        transition: transform 0.3s ease;
+        font-size: 24px;
+      }
+      .faq-item.active .faq-toggle-icon {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 1000px;
+        opacity: 1;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      input:focus {
+        outline: none;
+      }
+      .faq-item {
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+      .faq-toggle-icon {
+        transition: transform 0.3s ease;
+      }
+      .faq-item.active .faq-toggle-icon {
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="bg-primary text-white fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-medicine-bottle-line ri-lg"></i>
+          </div>
+          <span class="text-xl font-bold">Apotek Difa Farma</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="hover:text-gray-300">Beranda</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Tentang Apotek
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Sekilas-Tentang-Apotek.html"
+                  data-readdy="true"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Sekilas Tentang Apotek Difa</a
+                >
+                <a
+                  href="Kerjasama.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Kerjasama Asuransi & Perusahaan</a
+                >
+                <a
+                  href="Profil-Apoteker.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Apoteker</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Detail-Obat.html" class="hover:text-gray-300"
+                >Detail Obat</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Layanan Konsultasi
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Tentang-Pasien-BPJS.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Tentang Pasien BPJS</a
+                >
+                <a
+                  href="Persyaratan-Keperluan.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Persyaratan & Keperluan</a
+                >
+                <a
+                  href="Halaman-FAQ-Interaktif.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >FAQ</a
+                >
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Galeri & Berita
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Galeri-Interaktif-Apotek.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Galeri Apotek</a
+                >
+                <a
+                  href="Halaman-Berita.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Berita</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Halaman-Kontak.html" class="hover:text-gray-300"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 mt-14">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="#" class="hover:text-primary">HOME</a>
+          <span class="mx-2">/</span>
+          <a href="#" class="hover:text-primary">LAYANAN KONSULTASI</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-800 font-medium">FAQ</span>
+        </div>
+      </div>
+    </div>
+    <!-- FAQ Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-10">Frequently Ask Questions (FAQ)</h1>
+        <!-- Search Bar -->
+        <div class="mb-10">
+          <div class="relative max-w-xl mx-auto">
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+            <input
+              type="text"
+              id="faq-search"
+              class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+              placeholder="Cari pertanyaan..."
+            />
+          </div>
+        </div>
+        <!-- FAQ Accordion -->
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden active"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Pukul berapa loket Apotek dibuka?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Kami buka 24 jam dan 7 hari dalam seminggu untuk melayani
+                  kebutuhan obat-obatan Anda.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Bagaimana cara melakukan konsultasi online?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Untuk melakukan konsultasi online, Anda dapat:
+                </p>
+                <ol class="list-decimal pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>
+                    Mengunjungi website resmi kami dan klik menu "Konsultasi
+                    Online"
+                  </li>
+                  <li>
+                    Mengisi formulir pendaftaran dengan data diri yang lengkap
+                  </li>
+                  <li>Pilih jadwal konsultasi yang tersedia</li>
+                  <li>Lakukan pembayaran jika diperlukan</li>
+                  <li>
+                    Anda akan menerima link untuk konsultasi online melalui
+                    email atau WhatsApp
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Apakah tersedia layanan antar obat?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Ya, kami menyediakan layanan antar obat ke alamat Anda.
+                  Layanan ini tersedia untuk area Jakarta dan sekitarnya dengan
+                  minimal pembelian Rp 100.000. Pengiriman gratis untuk jarak
+                  maksimal 5 km dari apotek kami. Untuk informasi lebih lanjut,
+                  silakan hubungi customer service kami di nomor +62
+                  812-3456-7890.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 4 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Bagaimana prosedur pembelian obat dengan BPJS?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Prosedur pembelian obat dengan BPJS di Apotek Difa Farma:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>
+                    Pastikan Anda membawa kartu BPJS, KTP, dan resep dokter dari
+                    fasilitas kesehatan yang bekerja sama dengan BPJS
+                  </li>
+                  <li>
+                    Resep harus berasal dari dokter di fasilitas kesehatan yang
+                    ditunjuk sesuai dengan kartu BPJS Anda
+                  </li>
+                  <li>
+                    Serahkan resep dan kartu BPJS Anda ke petugas apotek untuk
+                    diverifikasi
+                  </li>
+                  <li>Tunggu proses verifikasi dan penyiapan obat</li>
+                  <li>
+                    Jika ada obat yang tidak ditanggung BPJS, Anda akan
+                    diberitahu dan dapat memutuskan untuk membeli secara pribadi
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- FAQ Item 5 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Apakah perlu resep dokter untuk membeli obat?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Tidak semua obat memerlukan resep dokter. Di Indonesia, obat
+                  dibagi menjadi beberapa kategori:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>
+                    <span class="font-medium">Obat Bebas:</span> Dapat dibeli
+                    tanpa resep dokter (logo lingkaran hijau)
+                  </li>
+                  <li>
+                    <span class="font-medium">Obat Bebas Terbatas:</span> Dapat
+                    dibeli tanpa resep dokter tetapi ada peringatan penggunaan
+                    (logo biru)
+                  </li>
+                  <li>
+                    <span class="font-medium">Obat Keras:</span> Harus dengan
+                    resep dokter (logo merah dengan huruf K)
+                  </li>
+                  <li>
+                    <span class="font-medium">Obat Narkotika:</span> Harus
+                    dengan resep dokter khusus (logo palang merah)
+                  </li>
+                </ul>
+                <p class="mt-2 text-gray-600">
+                  Apoteker kami akan membantu mengarahkan Anda sesuai dengan
+                  kebutuhan dan regulasi yang berlaku.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 6 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Berapa lama waktu tunggu untuk pelayanan resep?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Waktu tunggu untuk pelayanan resep di Apotek Difa Farma
+                  bervariasi tergantung pada:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>Kompleksitas resep dan jumlah item obat</li>
+                  <li>Ketersediaan obat di apotek</li>
+                  <li>Jumlah antrian pelanggan</li>
+                </ul>
+                <p class="mt-2 text-gray-600">
+                  Secara umum, untuk resep standar dengan 1-3 item obat yang
+                  tersedia, waktu tunggu sekitar 15-20 menit. Untuk resep yang
+                  lebih kompleks atau memerlukan peracikan khusus, waktu tunggu
+                  bisa mencapai 30-45 menit. Kami selalu berusaha memberikan
+                  pelayanan secepat mungkin tanpa mengorbankan ketelitian dan
+                  keamanan.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 7 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Apakah Apotek Difa menerima pembayaran non-tunai?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Ya, Apotek Difa Farma menerima berbagai metode pembayaran
+                  non-tunai, termasuk:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>Kartu debit dan kredit (Visa, Mastercard, JCB)</li>
+                  <li>
+                    QRIS (untuk berbagai e-wallet seperti GoPay, OVO, DANA,
+                    LinkAja)
+                  </li>
+                  <li>Transfer bank</li>
+                  <li>Aplikasi mobile banking</li>
+                </ul>
+                <p class="mt-2 text-gray-600">
+                  Kami juga menerima pembayaran tunai untuk kenyamanan pelanggan
+                  yang lebih memilih metode pembayaran tradisional.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 8 -->
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <div
+                class="faq-question flex justify-between items-center p-5 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
+              >
+                <h3 class="font-medium text-gray-800">
+                  Bagaimana cara mendapatkan kartu member Apotek Difa?
+                </h3>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-add-line faq-toggle-icon"></i>
+                </div>
+              </div>
+              <div
+                class="faq-answer bg-gray-50 px-5 py-4 border-t border-gray-200"
+              >
+                <p class="text-gray-600">
+                  Untuk mendapatkan kartu member Apotek Difa Farma, ikuti
+                  langkah-langkah berikut:
+                </p>
+                <ol class="list-decimal pl-5 mt-2 space-y-2 text-gray-600">
+                  <li>Kunjungi Apotek Difa Farma terdekat</li>
+                  <li>Minta formulir pendaftaran member di kasir</li>
+                  <li>Isi formulir dengan data diri lengkap</li>
+                  <li>Sertakan fotokopi KTP</li>
+                  <li>
+                    Bayar biaya pendaftaran sebesar Rp 25.000 (biaya ini akan
+                    dikembalikan dalam bentuk poin yang dapat digunakan untuk
+                    pembelian berikutnya)
+                  </li>
+                  <li>
+                    Kartu member akan diberikan langsung dan dapat digunakan
+                    untuk mendapatkan berbagai keuntungan seperti diskon khusus,
+                    program poin, dan promosi eksklusif
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Hubungi Kami</h3>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <p>info@difafarma.com</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-global-line"></i>
+              </div>
+              <p>www.difafarma.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Jam Operasional</h3>
+            <p class="mb-2">Buka 24 Jam</p>
+            <p class="mb-4">Melayani Setiap Hari</p>
+            <h3 class="text-xl font-medium mb-4 mt-6">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Berita Terkini</h3>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">
+                Tips Menjaga Kesehatan di Musim Hujan
+              </h4>
+              <p class="text-sm text-gray-300">
+                Ketahui cara terbaik menjaga daya tahan tubuh saat musim
+                penghujan tiba.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">Promo Vitamin dan Suplemen</h4>
+              <p class="text-sm text-gray-300">
+                Dapatkan diskon menarik hingga 30% untuk berbagai vitamin dan
+                suplemen pilihan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>© 2025 Apotek Difa Farma - Hak Cipta Dilindungi</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.querySelector("button");
+        const nav = document.querySelector("nav");
+        menuButton.addEventListener("click", function () {
+          nav.classList.toggle("hidden");
+          nav.classList.toggle("flex");
+          nav.classList.toggle("flex-col");
+          nav.classList.toggle("absolute");
+          nav.classList.toggle("top-16");
+          nav.classList.toggle("left-0");
+          nav.classList.toggle("w-full");
+          nav.classList.toggle("bg-primary");
+          nav.classList.toggle("p-4");
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll(".faq-item");
+        const toggleIcons = document.querySelectorAll(".faq-toggle-icon");
+        faqItems.forEach((item, index) => {
+          const question = item.querySelector(".faq-question");
+          const toggleIcon = toggleIcons[index];
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+            // Close all other items
+            faqItems.forEach((otherItem) => {
+              if (
+                otherItem !== item &&
+                otherItem.classList.contains("active")
+              ) {
+                otherItem.classList.remove("active");
+              }
+            });
+            // Toggle current item with animation
+            if (!isActive) {
+              item.classList.add("active");
+            } else {
+              item.classList.remove("active");
+            }
+          });
+        });
+        // FAQ search functionality
+        const searchInput = document.getElementById("faq-search");
+        searchInput.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          faqItems.forEach((item) => {
+            const questionText = item
+              .querySelector(".faq-question h3")
+              .textContent.toLowerCase();
+            const answerText = item
+              .querySelector(".faq-answer")
+              .textContent.toLowerCase();
+            if (
+              questionText.includes(searchTerm) ||
+              answerText.includes(searchTerm)
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

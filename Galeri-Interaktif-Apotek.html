@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Apotek - Apotek Difa Farma</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#111827", secondary: "#E4F5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 8px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      input:focus {
+        outline: none;
+      }
+      .gallery-item {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .lightbox.active {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox-content {
+        position: relative;
+        max-width: 80%;
+        max-height: 80%;
+      }
+      .lightbox-img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-prev {
+        left: -70px;
+      }
+      .lightbox-next {
+        right: -70px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header & Navigation -->
+    <header class="bg-primary text-white fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-medicine-bottle-line ri-lg"></i>
+          </div>
+          <span class="text-xl font-bold">Apotek Difa Farma</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="hover:text-gray-300">Beranda</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Tentang Apotek
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Sekilas-Tentang-Apotek.html"
+                  data-readdy="true"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Sekilas Tentang Apotek Difa</a
+                >
+                <a
+                  href="Kerjasama.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Kerjasama Asuransi & Perusahaan</a
+                >
+                <a
+                  href="Profil-Apoteker.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Apoteker</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Detail-Obat.html" class="hover:text-gray-300"
+                >Detail Obat</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Layanan Konsultasi
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Tentang-Pasien-BPJS.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Tentang Pasien BPJS</a
+                >
+                <a
+                  href="Persyaratan-Keperluan.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Persyaratan & Keperluan</a
+                >
+                <a
+                  href="Halaman-FAQ-Interaktif.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >FAQ</a
+                >
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Galeri & Berita
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Galeri-Interaktif-Apotek.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Galeri Apotek</a
+                >
+                <a
+                  href="Halaman-Berita.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Berita</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Halaman-Kontak.html" class="hover:text-gray-300"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="#" class="hover:text-primary">HOME</a>
+          <span class="mx-2">/</span>
+          <a href="#" class="hover:text-primary">GALERI & BERITA</a>
+          <span class="mx-2">/</span>
+          <span class="text-primary font-medium">GALERI APOTEK</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-12 min-h-screen">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center mb-12">Galeri Apotek</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Gallery Item 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="0"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520pharmacists%2520in%2520white%2520coats%2520discussing%2520in%2520a%2520modern%2520pharmacy%2520environment%252C%2520group%2520of%2520medical%2520professionals%2520collaborating%252C%2520clean%2520pharmacy%2520interior%252C%2520medical%2520staff%2520meeting&width=800&height=600&seq=10&orientation=landscape"
+                alt="Family Gathering"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Family Gathering</h3>
+              <p class="text-gray-600">16 Maret 2020</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="1"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=diverse%2520group%2520of%2520pharmacists%2520and%2520medical%2520staff%2520in%2520white%2520coats%2520smiling%2520in%2520a%2520modern%2520pharmacy%252C%2520professional%2520team%2520photo%252C%2520clean%2520pharmacy%2520shelves%2520in%2520background%252C%2520friendly%2520healthcare%2520professionals&width=800&height=600&seq=11&orientation=landscape"
+                alt="Family Gathering"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Family Gathering</h3>
+              <p class="text-gray-600">16 April 2021</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="2"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=female%2520pharmacist%2520explaining%2520medication%2520to%2520customer%2520in%2520modern%2520pharmacy%252C%2520professional%2520consultation%252C%2520pharmacy%2520shelves%2520with%2520medications%2520in%2520background%252C%2520healthcare%2520service%252C%2520clean%2520pharmacy%2520environment&width=800&height=600&seq=12&orientation=landscape"
+                alt="Family Gathering"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Family Gathering</h3>
+              <p class="text-gray-600">16 Mei 2022</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="3"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacists%2520attending%2520professional%2520training%2520session%2520in%2520conference%2520room%252C%2520medical%2520education%2520event%252C%2520healthcare%2520professionals%2520in%2520white%2520coats%252C%2520pharmacy%2520workshop%252C%2520modern%2520meeting%2520space&width=800&height=600&seq=13&orientation=landscape"
+                alt="Pelatihan Apoteker"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Pelatihan Apoteker</h3>
+              <p class="text-gray-600">23 Juni 2022</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="4"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacy%2520team%2520celebrating%2520anniversary%2520with%2520cake%2520in%2520modern%2520pharmacy%252C%2520staff%2520in%2520white%2520coats%2520gathered%2520around%2520celebration%2520table%252C%2520festive%2520atmosphere%2520in%2520professional%2520setting%252C%2520pharmacy%2520celebration%2520event&width=800&height=600&seq=14&orientation=landscape"
+                alt="Ulang Tahun Apotek"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Ulang Tahun Apotek</h3>
+              <p class="text-gray-600">10 Oktober 2022</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="5"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacy%2520staff%2520providing%2520free%2520health%2520check%2520services%2520to%2520community%2520members%252C%2520blood%2520pressure%2520measurement%252C%2520health%2520screening%2520event%252C%2520pharmacists%2520in%2520white%2520coats%2520helping%2520patients%252C%2520community%2520health%2520service&width=800&height=600&seq=15&orientation=landscape"
+                alt="Bakti Sosial"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Bakti Sosial</h3>
+              <p class="text-gray-600">15 Desember 2022</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 7 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="6"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacy%2520team%2520receiving%2520award%2520or%2520certification%252C%2520recognition%2520ceremony%252C%2520pharmacists%2520in%2520formal%2520attire%252C%2520professional%2520achievement%2520celebration%252C%2520healthcare%2520excellence%2520award&width=800&height=600&seq=16&orientation=landscape"
+                alt="Penghargaan Apotek"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Penghargaan Apotek</h3>
+              <p class="text-gray-600">20 Februari 2023</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 8 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="7"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacy%2520staff%2520participating%2520in%2520team%2520building%2520activity%2520outdoors%252C%2520recreational%2520event%2520for%2520healthcare%2520professionals%252C%2520pharmacy%2520team%2520in%2520casual%2520clothes%2520enjoying%2520outdoor%2520activities%252C%2520team%2520bonding%2520exercise&width=800&height=600&seq=17&orientation=landscape"
+                alt="Outbound Team"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Outbound Team</h3>
+              <p class="text-gray-600">5 Mei 2023</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 9 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden gallery-item"
+            data-index="8"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=pharmacy%2520renovation%2520or%2520new%2520branch%2520opening%252C%2520ribbon%2520cutting%2520ceremony%252C%2520modern%2520pharmacy%2520interior%252C%2520staff%2520and%2520guests%2520at%2520opening%2520event%252C%2520celebration%2520of%2520new%2520pharmacy%2520location&width=800&height=600&seq=18&orientation=landscape"
+                alt="Pembukaan Cabang Baru"
+                class="w-full h-full object-cover object-top transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-medium">Pembukaan Cabang Baru</h3>
+              <p class="text-gray-600">12 Januari 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+      <div class="lightbox-content">
+        <div class="lightbox-close">
+          <i class="ri-close-line"></i>
+        </div>
+        <img src="" alt="Gallery Image" class="lightbox-img" />
+        <div class="lightbox-nav lightbox-prev">
+          <i class="ri-arrow-left-s-line"></i>
+        </div>
+        <div class="lightbox-nav lightbox-next">
+          <i class="ri-arrow-right-s-line"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Hubungi Kami</h3>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <p>info@difafarma.com</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-global-line"></i>
+              </div>
+              <p>www.difafarma.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Jam Operasional</h3>
+            <p class="mb-2">Buka 24 Jam</p>
+            <p class="mb-4">Melayani Setiap Hari</p>
+            <h3 class="text-xl font-medium mb-4 mt-6">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Berita Terkini</h3>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">
+                Tips Menjaga Kesehatan di Musim Hujan
+              </h4>
+              <p class="text-sm text-gray-300">
+                Ketahui cara terbaik menjaga daya tahan tubuh saat musim
+                penghujan tiba.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">Promo Vitamin dan Suplemen</h4>
+              <p class="text-sm text-gray-300">
+                Dapatkan diskon menarik hingga 30% untuk berbagai vitamin dan
+                suplemen pilihan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>© 2025 Apotek Difa Farma - Hak Cipta Dilindungi</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "fixed inset-0 bg-primary z-50 transform -translate-x-full transition-transform duration-300 md:hidden";
+        mobileMenu.innerHTML = `
+                <div class="flex justify-end p-4">
+                    <button class="w-10 h-10 flex items-center justify-center text-white">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="px-4 py-2 space-y-4">
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Beranda</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Tentang Apotek</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Sekilas Tentang Apotek Difa</a>
+                            <a href="#" class="block text-white py-2">Kerjasama Asuransi & Perusahaan</a>
+                            <a href="#" class="block text-white py-2">Apoteker</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Detail Obat</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Layanan Konsultasi</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Tentang Pasien BPJS</a>
+                            <a href="#" class="block text-white py-2">Persyaratan & Keperluan</a>
+                            <a href="#" class="block text-white py-2">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Galeri & Berita</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Galeri Apotek</a>
+                            <a href="#" class="block text-white py-2">Berita</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Kontak</a>
+                </div>
+            `;
+        document.body.appendChild(mobileMenu);
+
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("-translate-x-full");
+        });
+
+        const closeButton = mobileMenu.querySelector("button");
+        closeButton.addEventListener("click", function () {
+          mobileMenu.classList.add("-translate-x-full");
+        });
+
+        const dropdownToggles = mobileMenu.querySelectorAll(
+          ".flex.justify-between"
+        );
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+            const icon = this.querySelector("i");
+            if (content.classList.contains("hidden")) {
+              icon.classList.remove("ri-arrow-up-s-line");
+              icon.classList.add("ri-arrow-down-s-line");
+            } else {
+              icon.classList.remove("ri-arrow-down-s-line");
+              icon.classList.add("ri-arrow-up-s-line");
+            }
+          });
+        });
+
+        // Lightbox functionality
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.querySelector(".lightbox");
+        const lightboxImg = document.querySelector(".lightbox-img");
+        const lightboxClose = document.querySelector(".lightbox-close");
+        const lightboxPrev = document.querySelector(".lightbox-prev");
+        const lightboxNext = document.querySelector(".lightbox-next");
+
+        let currentIndex = 0;
+        const images = Array.from(galleryItems).map((item) => {
+          return item.querySelector("img").src;
+        });
+
+        function openLightbox(index) {
+          currentIndex = index;
+          lightboxImg.src = images[currentIndex];
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        function showPrevImage() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          lightboxImg.src = images[currentIndex];
+        }
+
+        function showNextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          lightboxImg.src = images[currentIndex];
+        }
+
+        galleryItems.forEach((item, index) => {
+          item.addEventListener("click", () => {
+            openLightbox(index);
+          });
+        });
+
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightboxPrev.addEventListener("click", showPrevImage);
+        lightboxNext.addEventListener("click", showNextImage);
+
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", function (e) {
+          if (!lightbox.classList.contains("active")) return;
+
+          if (e.key === "Escape") {
+            closeLightbox();
+          } else if (e.key === "ArrowLeft") {
+            showPrevImage();
+          } else if (e.key === "ArrowRight") {
+            showNextImage();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

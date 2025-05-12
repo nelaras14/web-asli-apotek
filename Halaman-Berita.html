@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita - Apotek Difa Farma</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#111827", secondary: "#E4F5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 8px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      input:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-primary text-white fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-medicine-bottle-line ri-lg"></i>
+          </div>
+          <span class="text-xl font-bold">Apotek Difa Farma</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="hover:text-gray-300">Beranda</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Tentang Apotek
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Sekilas-Tentang-Apotek.html"
+                  data-readdy="true"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Sekilas Tentang Apotek Difa</a
+                >
+                <a
+                  href="Kerjasama.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Kerjasama Asuransi & Perusahaan</a
+                >
+                <a
+                  href="Profil-Apoteker.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Apoteker</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Detail-Obat.html" class="hover:text-gray-300"
+                >Detail Obat</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Layanan Konsultasi
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Tentang-Pasien-BPJS.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Tentang Pasien BPJS</a
+                >
+                <a
+                  href="Persyaratan-Keperluan.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Persyaratan & Keperluan</a
+                >
+                <a
+                  href="Halaman-FAQ-Interaktif.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >FAQ</a
+                >
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Galeri & Berita
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Galeri-Interaktif-Apotek.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Galeri Apotek</a
+                >
+                <a
+                  href="Halaman-Berita.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Berita</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Halaman-Kontak.html" class="hover:text-gray-300"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 mt-14">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="#" class="hover:text-primary">HOME</a>
+          <span class="mx-2">/</span>
+          <a href="#" class="hover:text-primary">GALERI & BERITA</a>
+          <span class="mx-2">/</span>
+          <span class="text-primary font-medium">BERITA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- News Content -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-8 text-center">Berita Terkini</h1>
+
+        <div class="space-y-8">
+          <!-- News Item 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="https://readdy.ai/api/search-image?query=medical%2520professional%2520in%2520protective%2520gear%2520with%2520face%2520mask%2520and%2520shield%252C%2520working%2520in%2520hospital%2520setting%252C%2520COVID-19%2520healthcare%2520worker%252C%2520clinical%2520environment%252C%2520medical%2520staff%2520in%2520PPE%252C%2520pandemic%2520response&width=600&height=600&seq=1&orientation=squarish"
+                  alt="COVID-19 di Indonesia"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h2 class="text-2xl font-bold mb-2">
+                  COVID-19 di Indonesia: Update Terkini
+                </h2>
+                <p class="text-gray-500 mb-3">16 Maret 2020</p>
+                <p class="text-gray-700 mb-4">
+                  Perkembangan terbaru kasus COVID-19 di Indonesia. Pemerintah
+                  terus memantau penyebaran virus dan menerapkan langkah-langkah
+                  pencegahan untuk melindungi masyarakat. Data terbaru
+                  menunjukkan peningkatan kasus di beberapa wilayah, namun upaya
+                  vaksinasi terus digalakkan untuk menekan angka penularan.
+                </p>
+                <a
+                  href="Halaman-Detail-Berita.html"
+                  class="inline-block px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+                  >Baca selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="https://readdy.ai/api/search-image?query=drive-through%2520COVID-19%2520testing%2520facility%252C%2520cars%2520lined%2520up%252C%2520medical%2520staff%2520in%2520protective%2520gear%252C%2520outdoor%2520testing%2520site%252C%2520healthcare%2520workers%2520collecting%2520samples%252C%2520pandemic%2520response%2520infrastructure&width=600&height=600&seq=2&orientation=squarish"
+                  alt="Fasilitas Tes COVID-19"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h2 class="text-2xl font-bold mb-2">
+                  Fasilitas Tes COVID-19 Diperluas
+                </h2>
+                <p class="text-gray-500 mb-3">16 Maret 2020</p>
+                <p class="text-gray-700 mb-4">
+                  Pemerintah memperluas fasilitas pengujian COVID-19 di berbagai
+                  daerah. Langkah ini diambil untuk mempercepat proses
+                  identifikasi kasus positif dan memutus rantai penularan.
+                  Fasilitas baru termasuk drive-thru testing dan mobile testing
+                  unit yang dapat menjangkau daerah-daerah terpencil.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+                  >Baca selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="https://readdy.ai/api/search-image?query=vaccine%2520development%2520laboratory%252C%2520scientist%2520working%2520with%2520samples%252C%2520medical%2520research%2520facility%252C%2520vaccine%2520vials%2520and%2520equipment%252C%2520clinical%2520trials%2520preparation%252C%2520modern%2520laboratory%2520setting&width=600&height=600&seq=3&orientation=squarish"
+                  alt="Persiapan Vaksinasi Massal"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h2 class="text-2xl font-bold mb-2">
+                  Persiapan Vaksinasi Massal
+                </h2>
+                <p class="text-gray-500 mb-3">16 Maret 2020</p>
+                <p class="text-gray-700 mb-4">
+                  Program vaksinasi nasional sedang dipersiapkan. Tim medis siap
+                  bertugas untuk melaksanakan program vaksinasi massal yang akan
+                  dimulai dalam waktu dekat. Pemerintah telah menyiapkan
+                  infrastruktur dan logistik untuk memastikan distribusi vaksin
+                  yang merata ke seluruh wilayah Indonesia.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+                  >Baca selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 4 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="https://readdy.ai/api/search-image?query=health%2520education%2520session%252C%2520public%2520health%2520official%2520explaining%2520prevention%2520measures%252C%2520community%2520gathering%2520with%2520social%2520distancing%252C%2520pandemic%2520awareness%2520campaign%252C%2520health%2520information%2520posters&width=600&height=600&seq=4&orientation=squarish"
+                  alt="Edukasi Kesehatan Masyarakat"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h2 class="text-2xl font-bold mb-2">
+                  Edukasi Kesehatan Masyarakat Ditingkatkan
+                </h2>
+                <p class="text-gray-500 mb-3">20 Maret 2020</p>
+                <p class="text-gray-700 mb-4">
+                  Kementerian Kesehatan meningkatkan kampanye edukasi kesehatan
+                  untuk masyarakat. Program ini bertujuan untuk memberikan
+                  pemahaman yang lebih baik tentang protokol kesehatan dan
+                  pentingnya vaksinasi. Berbagai platform media digunakan untuk
+                  menjangkau seluruh lapisan masyarakat.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+                  >Baca selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 5 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="https://readdy.ai/api/search-image?query=pharmacy%2520shelf%2520with%2520medications%252C%2520pharmacist%2520organizing%2520medicine%252C%2520well-stocked%2520pharmacy%2520interior%252C%2520medication%2520supply%2520management%252C%2520drug%2520store%2520inventory&width=600&height=600&seq=5&orientation=squarish"
+                  alt="Ketersediaan Obat"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h2 class="text-2xl font-bold mb-2">
+                  Ketersediaan Obat dan Vitamin Terjamin
+                </h2>
+                <p class="text-gray-500 mb-3">25 Maret 2020</p>
+                <p class="text-gray-700 mb-4">
+                  Apotek Difa Farma memastikan ketersediaan obat-obatan dan
+                  vitamin untuk menjaga imunitas tubuh. Kami berkomitmen untuk
+                  terus menyediakan produk kesehatan berkualitas dengan harga
+                  terjangkau. Stok obat-obatan esensial dan suplemen kesehatan
+                  telah ditingkatkan untuk mengantisipasi peningkatan
+                  permintaan.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+                  >Baca selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-10">
+          <nav class="inline-flex rounded-md shadow">
+            <a
+              href="#"
+              class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-l-md hover:bg-gray-50"
+              >Sebelumnya</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 bg-primary text-white border border-primary"
+              >1</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+              >2</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+              >3</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-r-md hover:bg-gray-50"
+              >Selanjutnya</a
+            >
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Hubungi Kami</h3>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <p>info@difafarma.com</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-global-line"></i>
+              </div>
+              <p>www.difafarma.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Jam Operasional</h3>
+            <p class="mb-2">Buka 24 Jam</p>
+            <p class="mb-4">Melayani Setiap Hari</p>
+            <h3 class="text-xl font-medium mb-4 mt-6">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Berita Terkini</h3>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">
+                Tips Menjaga Kesehatan di Musim Hujan
+              </h4>
+              <p class="text-sm text-gray-300">
+                Ketahui cara terbaik menjaga daya tahan tubuh saat musim
+                penghujan tiba.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">Promo Vitamin dan Suplemen</h4>
+              <p class="text-sm text-gray-300">
+                Dapatkan diskon menarik hingga 30% untuk berbagai vitamin dan
+                suplemen pilihan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>© 2025 Apotek Difa Farma - Hak Cipta Dilindungi</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "fixed inset-0 bg-primary z-50 transform -translate-x-full transition-transform duration-300 md:hidden";
+        mobileMenu.innerHTML = `
+                <div class="flex justify-end p-4">
+                    <button class="w-10 h-10 flex items-center justify-center text-white">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="px-4 py-2 space-y-4">
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Beranda</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Tentang Apotek</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Sekilas Tentang Apotek Difa</a>
+                            <a href="#" class="block text-white py-2">Kerjasama Asuransi & Perusahaan</a>
+                            <a href="#" class="block text-white py-2">Apoteker</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Detail Obat</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Layanan Konsultasi</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Tentang Pasien BPJS</a>
+                            <a href="#" class="block text-white py-2">Persyaratan & Keperluan</a>
+                            <a href="#" class="block text-white py-2">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Galeri & Berita</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Galeri Apotek</a>
+                            <a href="#" class="block text-white py-2">Berita</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Kontak</a>
+                </div>
+            `;
+        document.body.appendChild(mobileMenu);
+
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("-translate-x-full");
+        });
+
+        const closeButton = mobileMenu.querySelector("button");
+        closeButton.addEventListener("click", function () {
+          mobileMenu.classList.add("-translate-x-full");
+        });
+
+        const dropdownToggles = mobileMenu.querySelectorAll(
+          ".flex.justify-between"
+        );
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+            const icon = this.querySelector("i");
+            if (content.classList.contains("hidden")) {
+              icon.classList.remove("ri-arrow-up-s-line");
+              icon.classList.add("ri-arrow-down-s-line");
+            } else {
+              icon.classList.remove("ri-arrow-down-s-line");
+              icon.classList.add("ri-arrow-up-s-line");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

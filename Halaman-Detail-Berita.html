@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      COVID-19 di Indonesia: Perkembangan Terkini - Apotek Difa Farma
+    </title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#111827", secondary: "#E4F5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 8px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      input:focus {
+        outline: none;
+      }
+      .share-btn:hover {
+        background-color: rgba(17, 24, 39, 0.1);
+      }
+      .article-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+      .article-content ul {
+        margin-bottom: 1.5rem;
+      }
+      .article-content ul li {
+        margin-bottom: 0.5rem;
+      }
+      .article-content blockquote {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        border-left: 4px solid #111827;
+        background-color: #f9fafb;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-primary text-white fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-medicine-bottle-line ri-lg"></i>
+          </div>
+          <span class="text-xl font-bold">Apotek Difa Farma</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="hover:text-gray-300">Beranda</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Tentang Apotek
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Sekilas-Tentang-Apotek.html"
+                  data-readdy="true"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Sekilas Tentang Apotek Difa</a
+                >
+                <a
+                  href="Kerjasama.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Kerjasama Asuransi & Perusahaan</a
+                >
+                <a
+                  href="Profil-Apoteker.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Apoteker</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Detail-Obat.html" class="hover:text-gray-300"
+                >Detail Obat</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Layanan Konsultasi
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Tentang-Pasien-BPJS.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Tentang Pasien BPJS</a
+                >
+                <a
+                  href="Persyaratan-Keperluan.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Persyaratan & Keperluan</a
+                >
+                <a
+                  href="Halaman-FAQ-Interaktif.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >FAQ</a
+                >
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Galeri & Berita
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Galeri-Interaktif-Apotek.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Galeri Apotek</a
+                >
+                <a
+                  href="Halaman-Berita.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Berita</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Halaman-Kontak.html" class="hover:text-gray-300"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 mt-14">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="index.html" class="hover:text-primary">HOME</a>
+          <span class="mx-2">/</span>
+          <a href="#" class="hover:text-primary">GALERI & BERITA</a>
+          <span class="mx-2">/</span>
+          <a
+            href="Halaman-Berita.html"
+            data-readdy="true"
+            class="hover:text-primary"
+            >BERITA</a
+          >
+          <span class="mx-2">/</span>
+          <span class="text-gray-900 font-medium">COVID-19 DI INDONESIA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="py-8">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Article Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            COVID-19 di Indonesia: Perkembangan Terkini
+          </h1>
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center text-gray-600">
+              <div class="w-6 h-6 flex items-center justify-center mr-2">
+                <i class="ri-calendar-line"></i>
+              </div>
+              <span>16 Maret 2020</span>
+              <span class="mx-3">•</span>
+              <div class="w-6 h-6 flex items-center justify-center mr-2">
+                <i class="ri-user-line"></i>
+              </div>
+              <span>Dr. Adi Nugroho</span>
+            </div>
+            <div class="flex space-x-2">
+              <button
+                class="share-btn w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="ri-facebook-fill text-blue-600"></i>
+              </button>
+              <button
+                class="share-btn w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="ri-twitter-x-fill text-gray-800"></i>
+              </button>
+              <button
+                class="share-btn w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="ri-whatsapp-fill text-green-600"></i>
+              </button>
+              <button
+                class="share-btn w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="ri-telegram-fill text-blue-500"></i>
+              </button>
+              <button
+                class="share-btn w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="ri-link text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Image -->
+        <div class="mb-8 rounded-lg overflow-hidden shadow-md">
+          <img
+            src="https://readdy.ai/api/search-image?query=medical%2520professionals%2520in%2520protective%2520gear%2520working%2520in%2520a%2520hospital%2520setting%252C%2520team%2520of%2520doctors%2520and%2520nurses%2520in%2520PPE%2520suits%2520collaborating%2520during%2520COVID-19%2520pandemic%252C%2520high-quality%2520medical%2520facility%2520with%2520modern%2520equipment%252C%2520healthcare%2520workers%2520in%2520action&width=1200&height=600&seq=1001&orientation=landscape"
+            alt="Tim medis COVID-19"
+            class="w-full h-auto object-cover object-top"
+          />
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content text-gray-800 text-lg">
+          <p>
+            Kementerian Kesehatan Republik Indonesia melaporkan peningkatan
+            kasus COVID-19 di berbagai wilayah. Tim gugus tugas terus melakukan
+            pemantauan penanganan dan pencegahan penyebaran virus yang telah
+            menjadi pandemi global ini.
+          </p>
+
+          <p>
+            Berdasarkan data terbaru yang dirilis pada tanggal 15 Maret 2020,
+            jumlah kasus positif COVID-19 di Indonesia telah mencapai 117 orang.
+            Dari jumlah tersebut, 8 orang dinyatakan sembuh dan 5 orang
+            meninggal dunia. Kasus terbanyak masih terpusat di wilayah DKI
+            Jakarta, diikuti oleh Jawa Barat dan Banten.
+          </p>
+
+          <blockquote>
+            "Kesehatan masyarakat adalah prioritas utama. Mari bersama-sama
+            menjaga diri dan lingkungan dari penyebaran COVID-19." - Kementerian
+            Kesehatan RI
+          </blockquote>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">
+            Langkah-langkah yang Telah Diambil Pemerintah
+          </h2>
+
+          <p>
+            Dalam menghadapi situasi ini, pemerintah telah mengambil beberapa
+            langkah strategis untuk mengendalikan penyebaran virus dan
+            memberikan penanganan terbaik bagi masyarakat, di antaranya:
+          </p>
+
+          <ul class="list-disc pl-6">
+            <li>Pembatasan aktivitas masyarakat di ruang publik</li>
+            <li>Penerapan protokol kesehatan yang ketat</li>
+            <li>Percepatan program vaksinasi nasional</li>
+            <li>Peningkatan kapasitas rumah sakit</li>
+            <li>
+              Pembentukan pusat informasi dan koordinasi COVID-19 di setiap
+              daerah
+            </li>
+            <li>
+              Penyediaan fasilitas isolasi mandiri bagi pasien dengan gejala
+              ringan
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">
+            Protokol Kesehatan yang Perlu Dipatuhi
+          </h2>
+
+          <p>
+            Masyarakat diimbau untuk tetap waspada dan mematuhi protokol
+            kesehatan yang telah ditetapkan, meliputi:
+          </p>
+
+          <ul class="list-disc pl-6">
+            <li>Menggunakan masker saat berada di luar rumah</li>
+            <li>Mencuci tangan secara teratur dengan sabun dan air mengalir</li>
+            <li>Menjaga jarak fisik minimal 1,5 meter dari orang lain</li>
+            <li>Menghindari kerumunan</li>
+            <li>Membatasi mobilitas dan interaksi</li>
+            <li>
+              Meningkatkan daya tahan tubuh dengan konsumsi makanan bergizi dan
+              olahraga teratur
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">
+            Fasilitas Kesehatan yang Tersedia
+          </h2>
+
+          <p>
+            Pemerintah telah menyiapkan berbagai fasilitas kesehatan untuk
+            menangani pasien COVID-19, antara lain:
+          </p>
+
+          <ul class="list-disc pl-6">
+            <li>
+              Rumah Sakit Rujukan COVID-19 yang tersebar di seluruh provinsi
+            </li>
+            <li>Pusat Karantina dan Isolasi</li>
+            <li>Laboratorium Pemeriksaan PCR</li>
+            <li>
+              Fasilitas Telemedicine untuk konsultasi kesehatan jarak jauh
+            </li>
+            <li>Pusat Vaksinasi COVID-19</li>
+          </ul>
+
+          <p>
+            Apotek Difa Farma sebagai salah satu penyedia layanan kesehatan juga
+            berkomitmen untuk mendukung upaya pemerintah dalam menangani pandemi
+            ini. Kami menyediakan berbagai kebutuhan medis seperti masker, hand
+            sanitizer, vitamin, dan obat-obatan yang dibutuhkan masyarakat
+            dengan harga terjangkau.
+          </p>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">
+            Perkembangan Vaksinasi COVID-19
+          </h2>
+
+          <p>
+            Program vaksinasi nasional telah dimulai dengan target untuk
+            mencapai kekebalan kelompok (herd immunity). Prioritas vaksinasi
+            diberikan kepada tenaga kesehatan, lansia, petugas publik, dan
+            kelompok masyarakat yang berisiko tinggi. Pemerintah menargetkan 70%
+            populasi Indonesia telah divaksinasi pada akhir tahun 2021.
+          </p>
+
+          <p>
+            Masyarakat diharapkan tetap disiplin menerapkan protokol kesehatan
+            meskipun telah mendapatkan vaksin, karena vaksinasi tidak menjamin
+            100% terhindar dari infeksi virus.
+          </p>
+
+          <p>
+            Untuk informasi lebih lanjut mengenai COVID-19 dan layanan kesehatan
+            terkait, silakan menghubungi hotline Kementerian Kesehatan di 119
+            ext. 9 atau kunjungi situs resmi covid19.go.id.
+          </p>
+        </div>
+
+        <!-- Share & Tags Section -->
+        <div class="mt-10 border-t border-b border-gray-200 py-6">
+          <div class="flex flex-wrap justify-between items-center gap-4">
+            <div>
+              <h3 class="font-bold text-gray-700 mb-2">Tag:</h3>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  href="#"
+                  class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
+                  >COVID-19</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
+                  >Kesehatan</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
+                  >Pandemi</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
+                  >Protokol Kesehatan</a
+                >
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-700 mb-2">Bagikan:</h3>
+              <div class="flex space-x-3">
+                <button
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                  <i class="ri-facebook-fill"></i>
+                </button>
+                <button
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800 text-white hover:bg-black transition"
+                >
+                  <i class="ri-twitter-x-fill"></i>
+                </button>
+                <button
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-green-600 text-white hover:bg-green-700 transition"
+                >
+                  <i class="ri-whatsapp-fill"></i>
+                </button>
+                <button
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 text-white hover:bg-blue-600 transition"
+                >
+                  <i class="ri-telegram-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Author Info -->
+        <div
+          class="mt-8 bg-gray-50 rounded-lg p-6 flex flex-col md:flex-row gap-4 items-center"
+        >
+          <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%2520male%2520doctor%2520portrait%252C%2520medical%2520professional%2520in%2520white%2520coat%252C%2520confident%2520and%2520friendly%2520expression%252C%2520healthcare%2520specialist%252C%2520clean%2520medical%2520office%2520background%252C%2520high-quality%2520professional%2520headshot&width=200&height=200&seq=1002&orientation=squarish"
+              alt="Dr. Adi Nugroho"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Dr. Adi Nugroho</h3>
+            <p class="text-gray-600 mb-2">Spesialis Penyakit Dalam</p>
+            <p class="text-gray-700">
+              Dr. Adi Nugroho adalah seorang spesialis penyakit dalam dengan
+              pengalaman lebih dari 15 tahun. Beliau aktif dalam penelitian dan
+              penanganan kasus COVID-19 sejak awal pandemi di Indonesia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Back to News Button -->
+        <div class="mt-10 flex justify-between">
+          <a
+            href="https://readdy.ai/home/345146df-aefb-4cd6-b955-2a0da6bff263/8bad9180-a668-48fa-9cd9-55e6e30d71ec"
+            data-readdy="true"
+            class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition !rounded-button whitespace-nowrap"
+          >
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-arrow-left-line"></i>
+            </div>
+            Kembali ke Berita
+          </a>
+          <button
+            class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-gray-800 transition !rounded-button whitespace-nowrap"
+          >
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-printer-line"></i>
+            </div>
+            Cetak Artikel
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related News -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-8">Berita Terkait</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Related News 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=drive-through%2520COVID-19%2520testing%2520facility%252C%2520cars%2520lined%2520up%252C%2520medical%2520staff%2520in%2520protective%2520gear%252C%2520outdoor%2520testing%2520site%252C%2520healthcare%2520workers%2520collecting%2520samples%252C%2520pandemic%2520response%2520infrastructure&width=600&height=400&seq=1003&orientation=landscape"
+                alt="Fasilitas Tes COVID-19"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <p class="text-gray-500 text-sm mb-2">18 Maret 2020</p>
+              <h3 class="font-bold text-lg mb-2">
+                Fasilitas Tes COVID-19 Diperluas ke Berbagai Daerah
+              </h3>
+              <p class="text-gray-700 mb-4 line-clamp-2">
+                Pemerintah memperluas fasilitas pengujian COVID-19 di berbagai
+                daerah untuk mempercepat proses identifikasi kasus positif.
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Baca selengkapnya
+                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related News 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=vaccine%2520development%2520laboratory%252C%2520scientist%2520working%2520with%2520samples%252C%2520medical%2520research%2520facility%252C%2520vaccine%2520vials%2520and%2520equipment%252C%2520clinical%2520trials%2520preparation%252C%2520modern%2520laboratory%2520setting&width=600&height=400&seq=1004&orientation=landscape"
+                alt="Persiapan Vaksinasi Massal"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <p class="text-gray-500 text-sm mb-2">20 Maret 2020</p>
+              <h3 class="font-bold text-lg mb-2">
+                Persiapan Vaksinasi Massal COVID-19 di Indonesia
+              </h3>
+              <p class="text-gray-700 mb-4 line-clamp-2">
+                Program vaksinasi nasional sedang dipersiapkan dengan target
+                untuk mencapai kekebalan kelompok dalam menghadapi pandemi.
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Baca selengkapnya
+                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related News 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=health%2520education%2520session%252C%2520public%2520health%2520official%2520explaining%2520prevention%2520measures%252C%2520community%2520gathering%2520with%2520social%2520distancing%252C%2520pandemic%2520awareness%2520campaign%252C%2520health%2520information%2520posters&width=600&height=400&seq=1005&orientation=landscape"
+                alt="Edukasi Kesehatan Masyarakat"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <p class="text-gray-500 text-sm mb-2">22 Maret 2020</p>
+              <h3 class="font-bold text-lg mb-2">
+                Edukasi Kesehatan Masyarakat Ditingkatkan
+              </h3>
+              <p class="text-gray-700 mb-4 line-clamp-2">
+                Kementerian Kesehatan meningkatkan kampanye edukasi kesehatan
+                untuk memberikan pemahaman yang lebih baik tentang protokol
+                kesehatan.
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Baca selengkapnya
+                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter -->
+    <section class="py-12 bg-primary text-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold mb-2">
+            Dapatkan Informasi Kesehatan Terbaru
+          </h2>
+          <p class="text-gray-300">
+            Berlangganan newsletter kami untuk mendapatkan update terbaru
+            seputar kesehatan dan COVID-19
+          </p>
+        </div>
+        <form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+          <input
+            type="email"
+            placeholder="Alamat email Anda"
+            class="flex-grow px-4 py-3 rounded-button border-none text-gray-800"
+            required
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-white text-primary font-medium rounded-button hover:bg-gray-100 transition !rounded-button whitespace-nowrap"
+          >
+            Berlangganan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Hubungi Kami</h3>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <p>info@difafarma.com</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-global-line"></i>
+              </div>
+              <p>www.difafarma.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Jam Operasional</h3>
+            <p class="mb-2">Buka 24 Jam</p>
+            <p class="mb-4">Melayani Setiap Hari</p>
+            <h3 class="text-xl font-medium mb-4 mt-6">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Berita Terkini</h3>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">
+                Tips Menjaga Kesehatan di Musim Hujan
+              </h4>
+              <p class="text-sm text-gray-300">
+                Ketahui cara terbaik menjaga daya tahan tubuh saat musim
+                penghujan tiba.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">Promo Vitamin dan Suplemen</h4>
+              <p class="text-sm text-gray-300">
+                Dapatkan diskon menarik hingga 30% untuk berbagai vitamin dan
+                suplemen pilihan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>© 2025 Apotek Difa Farma - Hak Cipta Dilindungi</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+    >
+      <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "fixed inset-0 bg-primary z-50 transform -translate-x-full transition-transform duration-300 md:hidden";
+        mobileMenu.innerHTML = `
+    <div class="flex justify-end p-4">
+      <button class="w-10 h-10 flex items-center justify-center text-white">
+        <i class="ri-close-line text-2xl"></i>
+      </button>
+    </div>
+    <div class="px-4 py-2 space-y-4">
+      <a href="https://readdy.ai/home/345146df-aefb-4cd6-b955-2a0da6bff263/8bad9180-a668-48fa-9cd9-55e6e30d71ec" data-readdy="true" class="block text-white py-3 border-b border-white/20 font-medium">Beranda</a>
+      <div class="py-3 border-b border-white/20">
+        <div class="flex justify-between items-center text-white font-medium">
+          <span>Tentang Apotek</span>
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </div>
+        <div class="mt-2 ml-4 hidden">
+          <a href="#" class="block text-white py-2">Sekilas Tentang Apotek Difa</a>
+          <a href="#" class="block text-white py-2">Kerjasama Asuransi & Perusahaan</a>
+          <a href="#" class="block text-white py-2">Apoteker</a>
+        </div>
+      </div>
+      <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Detail Obat</a>
+      <div class="py-3 border-b border-white/20">
+        <div class="flex justify-between items-center text-white font-medium">
+          <span>Layanan Konsultasi</span>
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </div>
+        <div class="mt-2 ml-4 hidden">
+          <a href="#" class="block text-white py-2">Tentang Pasien BPJS</a>
+          <a href="#" class="block text-white py-2">Persyaratan & Keperluan</a>
+          <a href="#" class="block text-white py-2">FAQ</a>
+        </div>
+      </div>
+      <div class="py-3 border-b border-white/20">
+        <div class="flex justify-between items-center text-white font-medium">
+          <span>Galeri & Berita</span>
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </div>
+        <div class="mt-2 ml-4 hidden">
+          <a href="#" class="block text-white py-2">Galeri Apotek</a>
+          <a href="#" class="block text-white py-2">Berita</a>
+        </div>
+      </div>
+      <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Kontak</a>
+    </div>
+  `;
+        document.body.appendChild(mobileMenu);
+
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("-translate-x-full");
+        });
+
+        const closeButton = mobileMenu.querySelector("button");
+        closeButton.addEventListener("click", function () {
+          mobileMenu.classList.add("-translate-x-full");
+        });
+
+        const dropdownToggles = mobileMenu.querySelectorAll(
+          ".flex.justify-between"
+        );
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+            const icon = this.querySelector("i");
+            if (content.classList.contains("hidden")) {
+              icon.classList.remove("ri-arrow-up-s-line");
+              icon.classList.add("ri-arrow-down-s-line");
+            } else {
+              icon.classList.remove("ri-arrow-down-s-line");
+              icon.classList.add("ri-arrow-up-s-line");
+            }
+          });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+          } else {
+            backToTopButton.classList.remove("opacity-100", "visible");
+            backToTopButton.classList.add("opacity-0", "invisible");
+          }
+        });
+
+        backToTopButton.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // Share buttons functionality
+        const shareButtons = document.querySelectorAll(".share-btn");
+        shareButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Implement share functionality here
+            // For demonstration purposes, we'll just show an alert
+            alert("Artikel berhasil dibagikan!");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

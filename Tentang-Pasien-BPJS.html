@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Pasien BPJS - Apotek Difa Farma</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#111827", secondary: "#E4F5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 8px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      input:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header & Navigation -->
+    <header class="bg-primary text-white fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-medicine-bottle-line ri-lg"></i>
+          </div>
+          <span class="text-xl font-bold">Apotek Difa Farma</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="hover:text-gray-300">Beranda</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Tentang Apotek
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Sekilas-Tentang-Apotek.html"
+                  data-readdy="true"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Sekilas Tentang Apotek Difa</a
+                >
+                <a
+                  href="Kerjasama.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Kerjasama Asuransi & Perusahaan</a
+                >
+                <a
+                  href="Profil-Apoteker.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Apoteker</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Detail-Obat.html" class="hover:text-gray-300"
+                >Detail Obat</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Layanan Konsultasi
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Tentang-Pasien-BPJS.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Tentang Pasien BPJS</a
+                >
+                <a
+                  href="Persyaratan-Keperluan.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Persyaratan & Keperluan</a
+                >
+                <a
+                  href="Halaman-FAQ-Interaktif.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >FAQ</a
+                >
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="hover:text-gray-300 flex items-center">
+                Galeri & Berita
+                <div class="w-4 h-4 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </a>
+              <div class="dropdown-content">
+                <a
+                  href="Galeri-Interaktif-Apotek.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Galeri Apotek</a
+                >
+                <a
+                  href="Halaman-Berita.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Berita</a
+                >
+              </div>
+            </li>
+            <li>
+              <a href="Halaman-Kontak.html" class="hover:text-gray-300"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 mt-14">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="#" class="hover:text-primary">HOME</a>
+          <span class="mx-2">/</span>
+          <a href="#" class="hover:text-primary">LAYANAN KONSULTASI</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-900 font-medium">TENTANG PASIEN BPJS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <!-- User Icon -->
+        <div class="flex justify-center mb-8">
+          <div
+            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center"
+          >
+            <i class="ri-user-line text-4xl text-gray-600"></i>
+          </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-3xl font-bold text-center mb-12">Pasien BPJS</h1>
+
+        <!-- Informasi Umum Section -->
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-4">Informasi Umum</h2>
+          <p class="text-gray-700 leading-relaxed">
+            BPJS Kesehatan merupakan badan hukum publik yang bertanggung jawab
+            kepada Presiden dan berfungsi menyelenggarakan program jaminan
+            kesehatan bagi seluruh penduduk Indonesia.
+          </p>
+        </div>
+
+        <!-- Hak Pasien BPJS Section -->
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-4">Hak Pasien BPJS</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <div
+                class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0"
+              >
+                <i class="ri-check-line text-white text-sm"></i>
+              </div>
+              <p class="text-gray-700">
+                Mendapatkan kartu peserta sebagai bukti sah untuk memperoleh
+                pelayanan kesehatan
+              </p>
+            </li>
+            <li class="flex items-start">
+              <div
+                class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0"
+              >
+                <i class="ri-check-line text-white text-sm"></i>
+              </div>
+              <p class="text-gray-700">
+                Memperoleh manfaat dan informasi tentang hak dan kewajiban serta
+                prosedur pelayanan kesehatan
+              </p>
+            </li>
+            <li class="flex items-start">
+              <div
+                class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0"
+              >
+                <i class="ri-check-line text-white text-sm"></i>
+              </div>
+              <p class="text-gray-700">
+                Menyampaikan pengaduan, kritik dan saran secara lisan atau
+                tertulis ke Kantor BPJS Kesehatan
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Catatan Penting Section -->
+        <div class="bg-blue-50 p-6 rounded-lg mb-10">
+          <h2 class="text-xl font-bold mb-4">Catatan Penting</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Pastikan selalu membawa kartu BPJS Kesehatan dan identitas diri yang
+            masih berlaku saat berobat. Untuk pelayanan rawat jalan di Rumah
+            Sakit, diperlukan surat rujukan dari Fasilitas Kesehatan Tingkat
+            Pertama (FKTP).
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Hubungi Kami</h3>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <p>info@difafarma.com</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                <i class="ri-global-line"></i>
+              </div>
+              <p>www.difafarma.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Jam Operasional</h3>
+            <p class="mb-2">Buka 24 Jam</p>
+            <p class="mb-4">Melayani Setiap Hari</p>
+            <h3 class="text-xl font-medium mb-4 mt-6">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-4">Berita Terkini</h3>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">
+                Tips Menjaga Kesehatan di Musim Hujan
+              </h4>
+              <p class="text-sm text-gray-300">
+                Ketahui cara terbaik menjaga daya tahan tubuh saat musim
+                penghujan tiba.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-medium mb-1">Promo Vitamin dan Suplemen</h4>
+              <p class="text-sm text-gray-300">
+                Dapatkan diskon menarik hingga 30% untuk berbagai vitamin dan
+                suplemen pilihan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>© 2025 Apotek Difa Farma - Hak Cipta Dilindungi</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "fixed inset-0 bg-primary z-50 transform -translate-x-full transition-transform duration-300 md:hidden";
+        mobileMenu.innerHTML = `
+                <div class="flex justify-end p-4">
+                    <button class="w-10 h-10 flex items-center justify-center text-white">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="px-4 py-2 space-y-4">
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Beranda</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Tentang Apotek</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Sekilas Tentang Apotek Difa</a>
+                            <a href="#" class="block text-white py-2">Kerjasama Asuransi & Perusahaan</a>
+                            <a href="#" class="block text-white py-2">Apoteker</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Detail Obat</a>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Layanan Konsultasi</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-up-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4">
+                            <a href="#" class="block text-white py-2 font-medium">Tentang Pasien BPJS</a>
+                            <a href="#" class="block text-white py-2">Persyaratan & Keperluan</a>
+                            <a href="#" class="block text-white py-2">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="py-3 border-b border-white/20">
+                        <div class="flex justify-between items-center text-white font-medium">
+                            <span>Galeri & Berita</span>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-4 hidden">
+                            <a href="#" class="block text-white py-2">Galeri Apotek</a>
+                            <a href="#" class="block text-white py-2">Berita</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-white py-3 border-b border-white/20 font-medium">Kontak</a>
+                </div>
+            `;
+        document.body.appendChild(mobileMenu);
+
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("-translate-x-full");
+        });
+
+        const closeButton = mobileMenu.querySelector("button");
+        closeButton.addEventListener("click", function () {
+          mobileMenu.classList.add("-translate-x-full");
+        });
+
+        const dropdownToggles = mobileMenu.querySelectorAll(
+          ".flex.justify-between"
+        );
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+            const icon = this.querySelector("i");
+            if (content.classList.contains("hidden")) {
+              icon.classList.remove("ri-arrow-up-s-line");
+              icon.classList.add("ri-arrow-down-s-line");
+            } else {
+              icon.classList.remove("ri-arrow-down-s-line");
+              icon.classList.add("ri-arrow-up-s-line");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
