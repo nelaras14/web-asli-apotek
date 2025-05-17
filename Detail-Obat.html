@@ -70,6 +70,115 @@
         -webkit-appearance: none;
       }
     </style>
+    <style>
+      /* Penanganan tampilan mobile secara umum */
+      @media (max-width: 768px) {
+        /* Sembunyikan menu desktop asli */
+        .desktop-nav {
+          display: none;
+        }
+
+        /* Tampilkan hanya satu menu mobile */
+        .mobile-nav {
+          display: block;
+          width: 100%;
+          background-color: #111827;
+        }
+
+        /* Perbaikan untuk menu dropdown di mobile */
+        .mobile-nav .dropdown-content {
+          position: static;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.05);
+          padding-left: 1rem;
+          box-shadow: none;
+          display: none;
+        }
+
+        /* Perbaikan styling untuk dropdown yang aktif */
+        .mobile-nav .dropdown.active .dropdown-content {
+          display: block;
+        }
+
+        /* Jarak antar item menu pada mobile */
+        .mobile-nav li {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav li:last-child {
+          border-bottom: none;
+        }
+
+        /* Styling untuk tombol dropdown di mobile */
+        .mobile-nav .dropdown-toggle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 0.75rem 0;
+        }
+
+        /* Perbaikan untuk tombol dropdown yang aktif */
+        .mobile-nav .dropdown.active .dropdown-indicator i {
+          transform: rotate(180deg);
+        }
+
+        /* Menangani header agar tidak tumpang tindih */
+        .main-content {
+          padding-top: 60px; /* Sesuaikan dengan tinggi header */
+        }
+
+        /* Perbaikan untuk hero section */
+        .hero-section {
+          height: 50vh; /* Sesuaikan tinggi hero pada mobile */
+        }
+
+        .hero-section h1 {
+          font-size: 2rem; /* Ukuran font lebih kecil pada mobile */
+        }
+
+        .hero-section p {
+          font-size: 1rem;
+        }
+
+        /* Perbaikan grid untuk layar kecil */
+        .grid-cols-3 {
+          grid-template-columns: 1fr; /* Konversi 3 kolom menjadi 1 kolom pada mobile */
+        }
+
+        /* Perbaikan padding pada container untuk mobile */
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        /* Pastikan gambar responsif */
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* Perbaikan margin pada footer untuk mobile */
+        footer .grid > div {
+          margin-bottom: 2rem;
+        }
+      }
+
+      /* Transisi halus untuk menu dropdown */
+      .dropdown-content {
+        transition: all 0.3s ease;
+      }
+
+      /* Hover effect untuk tombol dan link */
+      .mobile-nav a:active {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Animasi untuk icon dropdown */
+      .dropdown-indicator i {
+        transition: transform 0.3s ease;
+      }
+    </style>
   </head>
   <body class="bg-gray-50">
     <!-- Header & Navigation -->
@@ -77,13 +186,21 @@
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
+        <!-- Logo -->
         <a href="index.html" class="flex items-center gap-2">
           <div class="w-8 h-8 flex items-center justify-center">
             <i class="ri-medicine-bottle-line ri-lg"></i>
           </div>
           <span class="text-xl font-bold">Apotek Difa Farma</span>
         </a>
-        <nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="md:hidden text-white">
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav hidden md:block">
           <ul class="flex space-x-6">
             <li>
               <a href="index.html" class="hover:text-gray-300">Beranda</a>
@@ -98,7 +215,6 @@
               <div class="dropdown-content">
                 <a
                   href="Sekilas-Tentang-Apotek.html"
-                  data-readdy="true"
                   class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                   >Sekilas Tentang Apotek Difa</a
                 >
@@ -121,7 +237,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="hover:text-gray-300 flex items-center">
-                Layanan Konsultasi
+                Layanan Informasi
                 <div class="w-4 h-4 flex items-center justify-center ml-1">
                   <i class="ri-arrow-down-s-line"></i>
                 </div>
@@ -172,6 +288,69 @@
           </ul>
         </nav>
       </div>
+
+      <!-- Mobile Navigation Menu - Hanya Satu Menu -->
+      <nav id="mobile-menu" class="mobile-nav hidden">
+        <ul class="px-4 py-2">
+          <li>
+            <a href="index.html" class="block py-3">Beranda</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle py-3">
+              <span>Tentang Apotek</span>
+              <span class="dropdown-indicator"
+                ><i class="ri-arrow-down-s-line"></i
+              ></span>
+            </a>
+            <div class="dropdown-content">
+              <a href="Sekilas-Tentang-Apotek.html" class="block py-3"
+                >Sekilas Tentang Apotek Difa</a
+              >
+              <a href="Kerjasama.html" class="block py-3"
+                >Kerjasama Asuransi & Perusahaan</a
+              >
+              <a href="Profil-Apoteker.html" class="block py-3">Apoteker</a>
+            </div>
+          </li>
+          <li>
+            <a href="Detail-Obat.html" class="block py-3">Detail Obat</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle py-3">
+              <span>Layanan Konsultasi</span>
+              <span class="dropdown-indicator"
+                ><i class="ri-arrow-down-s-line"></i
+              ></span>
+            </a>
+            <div class="dropdown-content">
+              <a href="Tentang-Pasien-BPJS.html" class="block py-3"
+                >Tentang Pasien BPJS</a
+              >
+              <a href="Persyaratan-Keperluan.html" class="block py-3"
+                >Persyaratan & Keperluan</a
+              >
+              <a href="Halaman-FAQ-Interaktif.html" class="block py-3">FAQ</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle py-3">
+              <span>Galeri & Berita</span>
+              <span class="dropdown-indicator"
+                ><i class="ri-arrow-down-s-line"></i
+              ></span>
+            </a>
+            <div class="dropdown-content">
+              <a href="Galeri-Interaktif-Apotek.html" class="block py-3"
+                >Galeri Apotek</a
+              >
+              <a href="Halaman-Berita.html" class="block py-3">Berita</a>
+            </div>
+          </li>
+          <li>
+            <a href="Halaman-Kontak.html" class="block py-3">Kontak</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Breadcrumb -->
@@ -307,7 +486,7 @@
               <div class="w-5 h-5 flex items-center justify-center mt-0.5">
                 <i class="ri-map-pin-line"></i>
               </div>
-              <p>Jl. Merdeka 123, Jakarta Selatan</p>
+              <p>Jl. Mawar, Sulawesi Selatan</p>
             </div>
             <div class="flex items-start gap-3 mb-2">
               <div class="w-5 h-5 flex items-center justify-center mt-0.5">
@@ -319,13 +498,13 @@
               <div class="w-5 h-5 flex items-center justify-center mt-0.5">
                 <i class="ri-mail-line"></i>
               </div>
-              <p>info@difafarma.com</p>
+              <p>difafarmaapotek@gmail.com</p>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-5 h-5 flex items-center justify-center mt-0.5">
                 <i class="ri-global-line"></i>
               </div>
-              <p>www.difafarma.com</p>
+              <p>www.apotekdifafarma.my.id</p>
             </div>
           </div>
           <div>
@@ -388,24 +567,74 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const searchInput = document.querySelector('input[type="search"]');
-        searchInput.addEventListener("focus", function () {
-          this.classList.add("ring-2", "ring-primary", "border-transparent");
-        });
+        // Elements
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const dropdownToggles = document.querySelectorAll(
+          ".mobile-nav .dropdown-toggle"
+        );
 
-        searchInput.addEventListener("blur", function () {
-          if (this.value === "") {
-            this.classList.remove(
-              "ring-2",
-              "ring-primary",
-              "border-transparent"
-            );
+        // Toggle mobile menu visibility
+        mobileMenuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+
+          // Change icon
+          const icon = mobileMenuToggle.querySelector("i");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          } else {
+            icon.classList.remove("ri-menu-line");
+            icon.classList.add("ri-close-line");
           }
         });
 
-        const filterButton = document.querySelector("button");
-        filterButton.addEventListener("click", function () {
-          // Toggle dropdown functionality would go here
+        // Handle dropdown toggles in mobile menu
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const parent = this.closest(".dropdown");
+
+            // Close all other dropdowns first
+            document
+              .querySelectorAll(".mobile-nav .dropdown")
+              .forEach((item) => {
+                if (item !== parent) {
+                  item.classList.remove("active");
+                }
+              });
+
+            // Toggle current dropdown
+            parent.classList.toggle("active");
+          });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuToggle.contains(event.target)
+          ) {
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+
+              const icon = mobileMenuToggle.querySelector("i");
+              icon.classList.remove("ri-close-line");
+              icon.classList.add("ri-menu-line");
+            }
+          }
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            mobileMenu.classList.add("hidden");
+
+            const icon = mobileMenuToggle.querySelector("i");
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          }
         });
       });
     </script>
